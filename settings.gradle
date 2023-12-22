@@ -1,0 +1,4 @@
+
+rootProject.name = "SwipeMenuLayout"
+include ':app'
+include ':lib'

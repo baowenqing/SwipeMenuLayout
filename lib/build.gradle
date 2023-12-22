@@ -1,0 +1,48 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+//    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion 30
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+    }
+    buildFeatures {
+        buildConfig = false
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.baowenqing'
+                artifactId = 'SwipeMenuLayout'
+                version = '1.0.0'
+            }
+        }
+    }
+}
+
+
+dependencies {
+    compileOnly rootProject.ext.designVersion
+
+
+    compileOnly rootProject.ext.fragment
+}
+
+apply from: '../maven.gradle'
