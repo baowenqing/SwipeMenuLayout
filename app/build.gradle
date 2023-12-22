@@ -37,6 +37,6 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation rootProject.ext.designVersion
-    implementation project(':lib')
-
+//    implementation project(':lib')
+    implementation 'com.github.baowenqing:SwipeMenuLayout:1.0.0'
 }

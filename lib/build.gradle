@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'maven-publish'
+
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -24,19 +24,6 @@ android {
 
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-                groupId = 'com.github.baowenqing'
-                artifactId = 'SwipeMenuLayout'
-                version = '1.0.0'
-            }
-        }
-    }
-}
-
 
 dependencies {
     compileOnly rootProject.ext.designVersion
@@ -44,5 +31,3 @@ dependencies {
 
     compileOnly rootProject.ext.fragment
 }
-
-apply from: '../maven.gradle'
