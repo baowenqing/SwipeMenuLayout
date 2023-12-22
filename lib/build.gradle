@@ -26,8 +26,5 @@ android {
 
 
 dependencies {
-    compileOnly rootProject.ext.designVersion
-
-
-    compileOnly rootProject.ext.fragment
+    implementation rootProject.ext.designVersion
 }

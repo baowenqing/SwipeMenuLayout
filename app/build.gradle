@@ -38,5 +38,5 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation rootProject.ext.designVersion
 //    implementation project(':lib')
-    implementation 'com.github.baowenqing:SwipeMenuLayout:1.0.0'
+    implementation 'com.github.baowenqing:SwipeMenuLayout:V1.3.0'
 }
